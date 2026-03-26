@@ -1,0 +1,14 @@
+[project]
+name = "placeholder"
+version = "0.0.1"
+description = "placeholder"
+authors = [
+    { name = "Zeyue Xu" },
+    { name = "placeholder1" },
+    { name = "placeholder2" },
+    { name = "placeholder3" }
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
