@@ -14,6 +14,35 @@ def water_needed(dog):
     return f"Your 🐕 needs {water_amount}kg of water a day!"
 
 # function 2
+def food_needed(dog, activity="normal"):
+    """
+    Return recommended daily amount of food (rough estimate).
+    activity: "low", "normal", or "high"
+    """
+    if not isinstance(dog, Dog):
+        raise TypeError("Input must be a Dog object.")
+
+    activity = activity.lower().strip()
+    if activity not in {"low", "normal", "high"}:
+        raise ValueError("activity must be 'low', 'normal', or 'high'.")
+
+    # baseline: ~2% of body weight (kg) in food/day as a playful estimate
+    food_kg = dog.weight * 0.02
+
+    # adjust for activity
+    if activity == "low":
+        food_kg *= 0.9
+    elif activity == "high":
+        food_kg *= 1.2
+
+    # puppy / senior adjustments
+    if dog.age < 1:
+        food_kg *= 1.5
+    elif dog.age > 8:
+        food_kg *= 0.85
+
+    food_kg = round(food_kg, 3)
+    return f"🍽️🐕 Estimated food: {food_kg} kg/day (activity: {activity})"
 
 # function 3
 def walks_needed(dog):
@@ -65,4 +94,4 @@ def human_years(dog):
         elif dog.size == "large":
             human_age += (dog.age - 2) * 6
 
-    return f"🎂🐕 {round(human_years)} human years old"
+    return f"🎂🐕 {round(human_age)} human years old"
