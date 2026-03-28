@@ -11,7 +11,7 @@ def water_needed(dog):
     water_amount = dog.weight * 0.065
     water_amount = round(water_amount, 2)
 
-    return f"Your 🐕 needs {water_amount}kg of water a day!"
+    return f"Your 🐕 needs {water_amount}L of water a day!"
 
 # function 2
 def food_needed(dog, activity="normal"):
