@@ -1,6 +1,17 @@
 from dogcare.dog import Dog
 
 # function 1
+def water_needed(dog):
+    """
+    Return recommended daily amount of water, determined by its weight
+    """
+    if not isinstance(dog, Dog):
+        raise TypeError("Input must be a Dog object.")
+
+    water_amount = dog.weight * 0.065
+    water_amount = round(water_amount, 2)
+
+    return f"Your 🐕 needs {water_amount}kg of water a day!"
 
 # function 2
 
