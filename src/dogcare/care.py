@@ -38,6 +38,26 @@ def walks_needed(dog):
     return f"🚶‍♂️🐕{walks} walks/day, {duration} mins each"
 
 # function 4
+def dog_profile(dog):
+    profile = f"\nDOG PROFILE\n"
+    profile += f"Species: {dog.species}\n"
+    profile += f"Weight: {dog.weight} kg\n"
+    profile += f"Size: {dog.size}\n"
+    profile += f"Age: {dog.age} years\n"
+
+    if dog.age < 2:
+        profile += "Stage: Puppy\n"
+    elif dog.age < 7:
+        profile += "Stage: Adult\n"
+    else:
+        profile += "Stage: Senior\n"
+
+    if dog.size == "small":
+        profile += "Note: Small dogs need more frequent feeding.\n"
+    elif dog.size == "large":
+        profile += "Note: Large dogs require more exercise.\n"
+
+    return profile
 
 # function 6
 def human_years(dog):
@@ -66,3 +86,4 @@ def human_years(dog):
             human_age += (dog.age - 2) * 6
 
     return f"🎂🐕 {round(human_years)} human years old"
+
