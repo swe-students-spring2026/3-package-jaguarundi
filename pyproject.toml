@@ -15,6 +15,13 @@ authors = [
 license = { file = "LICENSE" }
 readme = "README.md"
 keywords = ["dog", "pet", "care", "health"]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [project.optional-dependencies]
 dev = ["pytest"]
