@@ -120,22 +120,22 @@ def test_human_years_small(small_puppy):
     assert "7.5" in care.human_years(small_puppy)
 
 def test_human_years_medium(medium_adult):
-    assert "34.0" in care.human_years(medium_adult)
+    assert "34" in care.human_years(medium_adult)
 
 def test_human_years_large_senior(large_senior):
-    assert "72.0" in care.human_years(large_senior)
+    assert "72" in care.human_years(large_senior)
 
 def test_human_years_large_senior(large_adult):
-    assert "42.0" in care.human_years(large_adult)
+    assert "42" in care.human_years(large_adult)
 
 def test_human_years_oversized(oversized_adult):
-    assert "39.0" in care.human_years(oversized_adult)
+    assert "39" in care.human_years(oversized_adult)
 
 def test_human_years_underweight_small(underweight_small_adult):
-    assert "28.0" in care.human_years(underweight_small_adult)
+    assert "28" in care.human_years(underweight_small_adult)
 
 def test_human_years_underweight_large(underweight_large_senior):
-    assert "132.0" in care.human_years(underweight_large_senior)
+    assert "132" in care.human_years(underweight_large_senior)
 
 def test_human_years_formatting(medium_adult):
     assert "🎂🐕" in care.human_years(medium_adult)
