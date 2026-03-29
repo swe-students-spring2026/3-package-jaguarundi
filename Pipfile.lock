@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "457fc4ad217920c6ab53ff602889e26eaed2a6bfbf8339d9b0d0af5c28d76d08"
+            "sha256": "726eff081aa8ab71aa80e68d5bdd882bbc1e6223744f13fee77bb997ce2a96e0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,9 +16,9 @@
         ]
     },
     "default": {
-        "placeholder": {
+        "dogcare": {
             "editable": true,
-            "file": "."
+            "path": "."
         }
     },
     "develop": {

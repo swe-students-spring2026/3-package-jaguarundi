@@ -1,6 +1,6 @@
 import pytest
 from dogcare.dog import Dog
-from dogcare.care import walks_needed
+import dogcare.care as care
 
 # Fixtures
 @pytest.fixture
@@ -12,27 +12,51 @@ def medium_adult():
     return Dog("Beagle", 10, "medium", 4)
 
 @pytest.fixture
+def oversized_adult():
+    return Dog("Bulldog", 30, "medium", 5)
+
+@pytest.fixture
 def large_senior():
     return Dog("Labrador", 35, "large", 10)
 
-
 # walks needed
 def test_walks_small(small_puppy):
-    assert "2 walks/day" in walks_needed(small_puppy)
-    assert "15 mins" in walks_needed(small_puppy)
+    assert "2 walks/day" in care.walks_needed(small_puppy)
+    assert "15 mins" in care.walks_needed(small_puppy)
 
 def test_walks_medium(medium_adult):
-    assert "2 walks/day" in walks_needed(medium_adult)
-    assert "30 mins" in walks_needed(medium_adult)
+    assert "2 walks/day" in care.walks_needed(medium_adult)
+    assert "30 mins" in care.walks_needed(medium_adult)
 
 def test_walks_large_senior(large_senior):
     # senior duration reduced by 10
-    assert "3 walks/day" in walks_needed(large_senior)
-    assert "20 mins" in walks_needed(large_senior)
+    assert "3 walks/day" in care.walks_needed(large_senior)
+    assert "20 mins" in care.walks_needed(large_senior)
 
 def test_walks_has_emoji(medium_adult):
-    assert "🚶" in walks_needed(medium_adult)
+    assert "🚶" in care.walks_needed(medium_adult)
 
 def test_walks_invalid():
     with pytest.raises(TypeError):
-        walks_needed(None)
+        care.walks_needed(None)
+
+# tip
+def test_dog_tip_puppy(small_puppy):
+    result = care.dog_tip(small_puppy)
+    assert "training" in result.lower()
+
+def test_dog_tip_senior(large_senior):
+    result = care.dog_tip(large_senior)
+    assert "senior care" in result.lower()
+
+def test_dog_tip_condition_check(medium_adult):
+    result = care.dog_tip(medium_adult)
+    assert "condition" in result.lower()
+
+def test_dog_tip_oversize(oversized_adult):
+    result = care.dog_tip(oversized_adult)
+    assert "oversize" in result.lower()
+
+def test_dog_tip_invalid():
+    with pytest.raises(TypeError):
+        care.dog_tip(None)
