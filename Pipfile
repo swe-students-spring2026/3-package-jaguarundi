@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-placeholder = {file = ".", editable = true}
+dogcare = {path = ".", editable = true}
 
 [dev-packages]
 pytest = "*"

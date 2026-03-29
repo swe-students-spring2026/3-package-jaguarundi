@@ -1,6 +1,6 @@
 import pytest
 from dogcare.dog import Dog
-from dogcare.care import walks_needed
+import dogcare.care as care
 
 # Fixtures
 @pytest.fixture
@@ -18,21 +18,21 @@ def large_senior():
 
 # walks needed
 def test_walks_small(small_puppy):
-    assert "2 walks/day" in walks_needed(small_puppy)
-    assert "15 mins" in walks_needed(small_puppy)
+    assert "2 walks/day" in care.walks_needed(small_puppy)
+    assert "15 mins" in care.walks_needed(small_puppy)
 
 def test_walks_medium(medium_adult):
-    assert "2 walks/day" in walks_needed(medium_adult)
-    assert "30 mins" in walks_needed(medium_adult)
+    assert "2 walks/day" in care.walks_needed(medium_adult)
+    assert "30 mins" in care.walks_needed(medium_adult)
 
 def test_walks_large_senior(large_senior):
     # senior duration reduced by 10
-    assert "3 walks/day" in walks_needed(large_senior)
-    assert "20 mins" in walks_needed(large_senior)
+    assert "3 walks/day" in care.walks_needed(large_senior)
+    assert "20 mins" in care.walks_needed(large_senior)
 
 def test_walks_has_emoji(medium_adult):
-    assert "🚶" in walks_needed(medium_adult)
+    assert "🚶" in care.walks_needed(medium_adult)
 
 def test_walks_invalid():
     with pytest.raises(TypeError):
-        walks_needed(None)
+        care.walks_needed(None)
