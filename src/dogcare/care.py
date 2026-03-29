@@ -11,7 +11,7 @@ def water_needed(dog):
     water_amount = dog.weight * 0.065
     water_amount = round(water_amount, 2)
 
-    return f"Your 🐕 needs {water_amount}L of water a day!"
+    return f"💧🐕 Estimated water consumption: {water_amount}L/day"
 
 # function 2
 def food_needed(dog, activity="normal"):
@@ -129,7 +129,7 @@ def human_years(dog):
     
     if dog.age < 1:
         human_years = dog.age * 15
-        return f"🎂🐕 {round(human_years)} human years old"
+        return f"🎂🐕 {round(human_years, 1)} human years old"
     
     human_age = 15
     
@@ -144,4 +144,4 @@ def human_years(dog):
         elif dog.size == "large":
             human_age += (dog.age - 2) * 6
 
-    return f"🎂🐕 {round(human_age)} human years old"
+    return f"🎂🐕 {round(human_age, 1)} human years old"

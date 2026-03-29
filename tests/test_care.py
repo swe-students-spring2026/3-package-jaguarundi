@@ -31,8 +31,33 @@ def underweight_small_adult():
 def underweight_large_senior():
     return Dog("German Shephard", 12, "large", 20)
 
+# test function 1
+def test_water_small(small_puppy):
+    assert "0.13L" in care.water_needed(small_puppy)
 
-# walks needed
+def test_water_medium(medium_adult):
+    assert "0.65L" in care.water_needed(medium_adult)
+
+def test_water_large(large_senior):
+    assert "2.28L" in care.water_needed(large_senior)
+
+def test_water_oversized_medium(oversized_medium_adult):
+    assert "1.95L" in care.water_needed(oversized_medium_adult)
+
+def test_water_underweight_small(underweight_small_adult):
+    assert "0.20L" in care.water_needed(underweight_small_adult)
+
+def test_water_underweight_large(underweight_large_senior):
+    assert "0.78L" in care.water_needed(underweight_large_senior)
+
+def test_water_formatting(large_senior):
+    assert "💧🐕" in care.water_needed(large_senior)
+
+def test_water_invalid():
+    with pytest.raises(TypeError):
+        care.water_needed(None)
+
+# test function 3
 def test_walks_small(small_puppy):
     assert "2 walks/day" in care.walks_needed(small_puppy)
     assert "15 mins" in care.walks_needed(small_puppy)
@@ -53,7 +78,7 @@ def test_walks_invalid():
     with pytest.raises(TypeError):
         care.walks_needed(None)
 
-# tip
+# test function 5
 def test_dog_tip_puppy(small_puppy):
     result = care.dog_tip(small_puppy)
     assert "training" in result.lower()
