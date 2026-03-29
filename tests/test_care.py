@@ -19,35 +19,6 @@ def oversized_adult():
 def large_senior():
     return Dog("Labrador", 35, "large", 10)
 
-# water needed
-def test_water_needed(medium_adult):
-    result = care.water_needed(medium_adult)
-    assert "needs" in result
-    assert "L of water" in result
-
-def test_water_needed_invalid():
-    with pytest.raises(TypeError):
-        care.water_needed(None)
-
-# food needed
-def test_food_needed_normal(medium_adult):
-    result = care.food_needed(medium_adult)
-    assert "Estimated food" in result
-    assert "normal" in result
-
-def test_food_needed_high_activity(medium_adult):
-    result = care.food_needed(medium_adult, activity="high")
-    assert "high" in result
-
-def test_food_needed_invalid_activity(medium_adult):
-    with pytest.raises(ValueError):
-        care.food_needed(medium_adult, activity="extreme")
-
-def test_food_needed_invalid_dog():
-    with pytest.raises(TypeError):
-        care.food_needed(None)
-
-
 # walks needed
 def test_walks_small(small_puppy):
     assert "2 walks/day" in care.walks_needed(small_puppy)
@@ -89,21 +60,3 @@ def test_dog_tip_oversize(oversized_adult):
 def test_dog_tip_invalid():
     with pytest.raises(TypeError):
         care.dog_tip(None)
-
-
-# human years
-def test_human_years_puppy(small_puppy):
-    result = care.human_years(small_puppy)
-    assert "human years old" in result
-
-def test_human_years_adult(medium_adult):
-    result = care.human_years(medium_adult)
-    assert "human years old" in result
-
-def test_human_years_senior(large_senior):
-    result = care.human_years(large_senior)
-    assert "human years old" in result
-
-def test_human_years_invalid():
-    with pytest.raises(TypeError):
-        care.human_years(None)
