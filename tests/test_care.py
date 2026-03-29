@@ -128,8 +128,8 @@ def test_human_years_large_senior(large_senior):
 def test_human_years_large_senior(large_adult):
     assert "42" in care.human_years(large_adult)
 
-def test_human_years_oversized(oversized_adult):
-    assert "39" in care.human_years(oversized_adult)
+def test_human_years_oversized(oversized_medium_adult):
+    assert "39" in care.human_years(oversized_medium_adult)
 
 def test_human_years_underweight_small(underweight_small_adult):
     assert "28" in care.human_years(underweight_small_adult)
