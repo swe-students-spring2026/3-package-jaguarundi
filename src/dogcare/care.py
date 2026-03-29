@@ -68,6 +68,56 @@ def walks_needed(dog):
 
 # function 4
 
+# function 5
+def dog_tip(dog):
+    if not isinstance(dog, Dog):
+        raise TypeError("Input must be a Dog object.")
+
+    tip = []
+    
+    if dog.age < 1:
+        tip.append("Focus on training, socialization, and multiple small meals per day. ")
+    elif dog.age > 8:
+        tip.append("Senior Care: Reduce intense activity and schedule regular vet checkups. ")
+        if dog.size == "large":
+            if dog.weight > 45:
+                tip.append("Your dog is oversized! Watch for joint strain. ")
+            elif dog.weight < 23:
+                tip.append("Your dog is underweighted! Watch for malnutrition. ")
+        elif dog.size == 'medium':
+            if dog.weight > 27:
+                tip.append("Your dog is oversized! Watch for joint strain. ")
+            elif dog.weight < 9:
+                tip.append("Your dog is underweighted! Watch for malnutrition. ")
+        elif dog.size == 'small':
+            if dog.weight > 11:
+                tip.append("Your dog is oversized! Watch for joint strain. ")
+            elif dog.weight < 4:
+                tip.append("Your dog is underweighted! Watch for malnutrition. ")
+    else:
+        if dog.size == "large":
+            if dog.weight > 45:
+                tip.append("Your dog is oversized! Watch for joint strain. ")
+            elif dog.weight < 23:
+                tip.append("Your dog is underweighted! Watch for malnutrition. ")
+            else:
+                tip.append("Your dog is in good condition! ")
+        elif dog.size == 'medium':
+            if dog.weight > 27:
+                tip.append("Your dog is oversized! Watch for joint strain. ")
+            elif dog.weight < 9:
+                tip.append("Your dog is underweighted! Watch for malnutrition. ")
+            else:
+                tip.append("Your dog is in good condition! ")
+        elif dog.size == 'small':
+            if dog.weight > 11:
+                tip.append("Your dog is oversized! Watch for joint strain. ")
+            elif dog.weight < 4:
+                tip.append("Your dog is underweighted! Watch for malnutrition. ")
+            else:
+                tip.append("Your dog is in good condition! ")
+    return "Care Tips: " + " ".join(tip)
+
 # function 6
 def human_years(dog):
     """
