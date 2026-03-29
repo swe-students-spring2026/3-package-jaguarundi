@@ -64,7 +64,7 @@ def test_dog_tip_senior(large_senior):
 
 def test_dog_tip_condition_check(medium_adult):
     result = care.dog_tip(medium_adult)
-    assert "condition" in result.lower()
+    assert "good condition" in result.lower()
 
 def test_dog_tip_large_adult(large_adult):
     result = care.dog_tip(large_adult)
