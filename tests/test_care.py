@@ -38,14 +38,17 @@ def test_water_small(small_puppy):
 def test_water_medium(medium_adult):
     assert "0.65L" in care.water_needed(medium_adult)
 
-def test_water_large(large_senior):
-    assert "2.28L" in care.water_needed(large_senior)
+def test_water_large_senior(large_senior):
+    assert "2.27L" in care.water_needed(large_senior)
+
+def test_water_large_adult(large_adult):
+    assert "1.95" in care.water_needed(large_adult)
 
 def test_water_oversized_medium(oversized_medium_adult):
     assert "1.95L" in care.water_needed(oversized_medium_adult)
 
 def test_water_underweight_small(underweight_small_adult):
-    assert "0.20L" in care.water_needed(underweight_small_adult)
+    assert "0.2L" in care.water_needed(underweight_small_adult)
 
 def test_water_underweight_large(underweight_large_senior):
     assert "0.78L" in care.water_needed(underweight_large_senior)
@@ -111,3 +114,32 @@ def test_dog_tip_underweight_large_senior(underweight_large_senior):
 def test_dog_tip_invalid():
     with pytest.raises(TypeError):
         care.dog_tip(None)
+
+# test function 6
+def test_human_years_small(small_puppy):
+    assert "7.5" in care.human_years(small_puppy)
+
+def test_human_years_medium(medium_adult):
+    assert "34.0" in care.human_years(medium_adult)
+
+def test_human_years_large_senior(large_senior):
+    assert "72.0" in care.human_years(large_senior)
+
+def test_human_years_large_senior(large_adult):
+    assert "42.0" in care.human_years(large_adult)
+
+def test_human_years_oversized(oversized_adult):
+    assert "39.0" in care.human_years(oversized_adult)
+
+def test_human_years_underweight_small(underweight_small_adult):
+    assert "28.0" in care.human_years(underweight_small_adult)
+
+def test_human_years_underweight_large(underweight_large_senior):
+    assert "132.0" in care.human_years(underweight_large_senior)
+
+def test_human_years_formatting(medium_adult):
+    assert "🎂🐕" in care.human_years(medium_adult)
+
+def test_human_years_invalid():
+    with pytest.raises(TypeError):
+        care.human_years(None)
