@@ -26,16 +26,14 @@ def food_needed(dog, activity="normal"):
     if activity not in {"low", "normal", "high"}:
         raise ValueError("activity must be 'low', 'normal', or 'high'.")
 
-    # baseline: ~2% of body weight (kg) in food/day as a playful estimate
     food_kg = dog.weight * 0.02
 
-    # adjust for activity
     if activity == "low":
         food_kg *= 0.9
     elif activity == "high":
         food_kg *= 1.2
 
-    # puppy / senior adjustments
+    # puppy/senior dogs
     if dog.age < 1:
         food_kg *= 1.5
     elif dog.age > 8:

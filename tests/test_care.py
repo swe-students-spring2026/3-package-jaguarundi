@@ -42,7 +42,7 @@ def test_water_large_senior(large_senior):
     assert "2.27L" in care.water_needed(large_senior)
 
 def test_water_large_adult(large_adult):
-    assert "1.95" in care.water_needed(large_adult)
+    assert "1.95L" in care.water_needed(large_adult)
 
 def test_water_oversized_medium(oversized_medium_adult):
     assert "1.95L" in care.water_needed(oversized_medium_adult)
@@ -59,6 +59,33 @@ def test_water_formatting(large_senior):
 def test_water_invalid():
     with pytest.raises(TypeError):
         care.water_needed(None)
+
+# test function 2(food)
+def test_food_formatting_default_activity(medium_adult):
+    msg = care.food_needed(medium_adult)
+    assert msg.startswith("🍽️🐕")
+    assert "kg/day" in msg
+    assert "(activity: normal)" in msg
+
+def test_food_activity_changes_amount(medium_adult):
+    low = care.food_needed(medium_adult, activity="low")
+    high = care.food_needed(medium_adult, activity="high")
+    assert low != high
+    assert "activity: low" in low.lower()
+    assert "activity: high" in high.lower()
+
+def test_food_puppy_vs_senior_adjustment(small_puppy, large_senior):
+    puppy = care.food_needed(small_puppy, activity="normal")
+    senior = care.food_needed(large_senior, activity="normal")
+    assert "kg/day" in puppy
+    assert "kg/day" in senior
+    assert puppy != senior
+
+def test_food_invalid():
+    with pytest.raises(TypeError):
+        care.food_needed(None)
+    with pytest.raises(ValueError):
+        care.food_needed(Dog("Beagle", 10, "medium", 4), activity="extreme")
 
 # test function 3
 def test_walks_small(small_puppy):
