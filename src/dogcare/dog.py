@@ -6,12 +6,12 @@ class Dog:
             raise ValueError("Species must be a non-empty string.")
         if not isinstance(weight, (int, float)) or weight <= 0:
             raise ValueError("Weight must be a positive number, in kilograms.")
-        if size.lower() not in self.VALID_SIZES:
+        if size.strip().lower() not in self.VALID_SIZES:
             raise ValueError(f"Size must be one of {self.VALID_SIZES}.")
         if not isinstance(age, (int, float)) or age < 0:
             raise ValueError("Age must be a non-negative number.")
         
         self.species = species.strip()
         self.weight = weight
-        self.size = size.lower()
+        self.size = size.strip().lower()
         self.age = age
