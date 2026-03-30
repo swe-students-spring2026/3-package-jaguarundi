@@ -110,7 +110,7 @@ def test_walks_invalid():
 
 # test function 4
 def test_dog_essential_fields(small_puppy):
-    profile = care.dog_profile
+    profile = care.dog_profile(small_puppy)
     assert "DOG PROFILE" in profile
     assert "Species: " in profile
     assert "Weight: " in profile
@@ -140,7 +140,7 @@ def test_dog_profile_formatting():
     dog = Dog("TestBreed", 10, "medium", 3)
     profile = care.dog_profile(dog)
     assert profile.startswith("\nDOG PROFILE")
-    assert profile.endswith("\n")
+    assert profile.endswith("\n") or profile.endswith("\n\n") 
     
 
 # test function 5
