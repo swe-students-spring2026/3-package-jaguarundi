@@ -87,7 +87,7 @@ def test_food_invalid():
     with pytest.raises(ValueError):
         care.food_needed(Dog("Beagle", 10, "medium", 4), activity="extreme")
 
-# test function 3
+# test function 3 (walk)
 def test_walks_small(small_puppy):
     assert "2 walks/day" in care.walks_needed(small_puppy)
     assert "15 mins" in care.walks_needed(small_puppy)
@@ -104,6 +104,35 @@ def test_walks_large_senior(large_senior):
 def test_walks_has_emoji(medium_adult):
     assert "🚶" in care.walks_needed(medium_adult)
 
+def test_walks_large_adult(large_adult):
+    result = care.walks_needed(large_adult)
+    assert "3 walks/day" in result
+    assert "30 mins" in result
+    assert "🚶" in result
+
+def test_walks_oversized_medium(oversized_medium_adult):
+    result = care.walks_needed(oversized_medium_adult)
+    assert "2 walks/day" in result
+    assert "30 mins" in result
+
+def test_walks_underweight_small(underweight_small_adult):
+    result = care.walks_needed(underweight_small_adult)
+    assert "2 walks/day" in result
+    assert "15 mins" in result
+
+def test_walks_underweight_large_senior(underweight_large_senior):
+    # senior duration reduced by 10: 30 - 10 = 20
+    result = care.walks_needed(underweight_large_senior)
+    assert "3 walks/day" in result
+    assert "20 mins" in result
+
+def test_walks_invalid_input():
+    with pytest.raises(TypeError):
+        care.walks_needed("not a dog")
+
+def test_walks_returns_string(large_adult):
+    assert isinstance(care.walks_needed(large_adult), str)
+    
 def test_walks_invalid():
     with pytest.raises(TypeError):
         care.walks_needed(None)
