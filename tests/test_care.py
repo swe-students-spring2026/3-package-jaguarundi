@@ -63,7 +63,7 @@ def test_water_invalid():
 # test function 2(food)
 def test_food_formatting_default_activity(medium_adult):
     msg = care.food_needed(medium_adult)
-    assert msg.startswith("🍽️🐕")
+    assert msg.startswith("🍽️ 🐕")
     assert "kg/day" in msg
     assert "(activity: normal)" in msg
 
@@ -132,7 +132,7 @@ def test_walks_invalid_input():
 
 def test_walks_returns_string(large_adult):
     assert isinstance(care.walks_needed(large_adult), str)
-    
+
 def test_walks_invalid():
     with pytest.raises(TypeError):
         care.walks_needed(None)
