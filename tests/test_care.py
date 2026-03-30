@@ -108,6 +108,40 @@ def test_walks_invalid():
     with pytest.raises(TypeError):
         care.walks_needed(None)
 
+# test function 4
+def test_dog_essential_fields(small_puppy):
+    profile = care.dog_profile
+    assert "DOG PROFILE" in profile
+    assert "Species: " in profile
+    assert "Weight: " in profile
+    assert "Size: " in profile
+
+def test_dog_profile_puppy(small_puppy):
+    profile = care.dog_profile(small_puppy)
+    assert "Stage: Puppy" in profile
+
+def test_dog_profile_medium(medium_adult):
+    profile = care.dog_profile(medium_adult)
+    assert "Stage: Adult" in profile
+
+def test_dog_profile_large_senior(large_adult):
+    profile = care.dog_profile(large_adult)
+    assert "Stage: Senior" in profile
+
+def test_dog_profile_puppy_note(small_puppy):
+    profile = care.dog_profile(small_puppy)
+    assert "Note: Small dogs need more frequent feeding." in profile
+
+def test_dog_profile_adult_note(large_adult):
+    profile = care.dog_profile(large_adult)
+    assert "Note: Large dogs require more exercise." in profile
+
+def test_dog_profile_formatting():
+    dog = Dog("TestBreed", 10, "medium", 3)
+    profile = care.dog_profile(dog)
+    assert profile.startswith("\nDOG PROFILE")
+    assert profile.endswith("\n")
+    
 # test function 5
 def test_dog_tip_puppy(small_puppy):
     result = care.dog_tip(small_puppy)
