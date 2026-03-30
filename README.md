@@ -1,4 +1,5 @@
 # DogCare
+[![CI](https://github.com/swe-students-spring2026/3-package-jaguarundi/actions/workflows/build.yaml/badge.svg)](https://github.com/swe-students-spring2026/3-package-jaguarundi/actions/workflows/build.yaml)
 
 ## Team
 - [**Zeyue Xu**](https://github.com/zeyuexu123)
