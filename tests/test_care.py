@@ -124,8 +124,8 @@ def test_dog_profile_medium(medium_adult):
     profile = care.dog_profile(medium_adult)
     assert "Stage: Adult" in profile
 
-def test_dog_profile_large_senior(large_adult):
-    profile = care.dog_profile(large_adult)
+def test_dog_profile_large_senior(large_senior):
+    profile = care.dog_profile(large_senior)
     assert "Stage: Senior" in profile
 
 def test_dog_profile_puppy_note(small_puppy):

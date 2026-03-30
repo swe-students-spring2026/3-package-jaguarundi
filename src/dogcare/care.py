@@ -83,7 +83,7 @@ def dog_profile(dog):
         profile += "Note: Small dogs need more frequent feeding.\n"
     elif dog.size == "large":
         profile += "Note: Large dogs require more exercise.\n"
-    return profile
+    return profile + "\n"
 
 # function 5
 def dog_tip(dog):
