@@ -16,9 +16,10 @@ def main():
     dog = Dog(species=species, weight=weight, size=size, age=age)
     
     print("\n📊 Results:")
-    print(f"Daily water intake : {care.water_needed(dog)} ml")
-    print(f"Daily food intake  : {care.food_needed(dog)} g")
-    print(f"Walks needed       : {care.walks_needed(dog)}")
+    print(f"Human age equivalent: {care.human_years(dog)}")
+    print(f"Daily water intake  : {care.water_needed(dog)}")
+    print(f"Daily food intake   : {care.food_needed(dog)}")
+    print(f"Walks needed        : {care.walks_needed(dog)}")
     print(care.dog_tip(dog))
         
 
