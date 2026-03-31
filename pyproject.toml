@@ -10,7 +10,8 @@ authors = [
     { name = "Zeyue Xu" },
     { name = "Steve Yoo" },
     { name = "Hanlin Yan" },
-    { name = "Grace Yin" }
+    { name = "Grace Yin" },
+    { name = "Edward Ye"}
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
