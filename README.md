@@ -1,6 +1,8 @@
 # DogCare
 [![CI](https://github.com/swe-students-spring2026/3-package-jaguarundi/actions/workflows/build.yaml/badge.svg)](https://github.com/swe-students-spring2026/3-package-jaguarundi/actions/workflows/build.yaml)
 
+[DogCare on PyPI](https://pypi.org/project/dogcare/0.0.1/)
+
 ## Description
 DogCare is a Python package that helps dog owners understand and manage their pet's daily needs. 
 
