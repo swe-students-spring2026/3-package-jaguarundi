@@ -26,6 +26,9 @@ Given `Dog(species, weight, size, age)`:
     - Converts dog age to a playful “human years” estimate.
 
 ## How to use the package
+### Requirements
+- **Python 3.9+** is required to run this package.
+
 ### Installation
 You can install this package directly from PyPI using pip:
 
@@ -34,7 +37,7 @@ pip install DogCare
 ```
 
 ## Usage Example
-Here is a complete example of how to import and use all the features of the `DogCare` package:
+Here is a complete example of how to import and use all the features of the `DogCare` package for your Python code:
 
 ### Import
 ```python
@@ -110,8 +113,35 @@ Output:
 🎂🐕 42 human years old
 ```
 
+### Interactive CLI
+You can also run `DogCare` as an interactive calculator directly from your terminal.
+
+```bash
+python3 -m dogcare
+# (Or use `python -m dogcare` depending on your environment)
+```
+
+It will prompt you to enter your dog's details to calculate the results interactively:
+```text
+🐶 Dog Care Calculator
+
+------------------------------
+
+Enter dog species: Golden Retriever
+Enter weight (kg): 30.0
+Enter size (small/medium/large): large
+Enter age (years): 5
+
+📊 Results:
+Human age equivalent: 🎂🐕 42.0 human years old
+Daily water intake  : 💧🐕 Estimated water consumption: 1.95L/day
+Daily food intake   : 🍽️ 🐕 Estimated food: 0.6 kg/day (activity: normal)
+Walks needed        : 🚶🐕 Estimated walks: 3 walks/day, 30 mins each
+Care Tips:
+Your dog is in good condition!
+```
+
 ## For Developers
-If you want to contribute to the project, here is how you can set up your local development environment:
 
 1. Clone the repository:
    ```bash
