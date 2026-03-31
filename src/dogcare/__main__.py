@@ -6,7 +6,9 @@ import dogcare.care as care
 
 def main():
     print("🐶 Dog Care Calculator")
+    print()
     print("-" * 30)
+    print()
     
     species = input("Enter dog species: ")
     weight  = float(input("Enter weight (kg): "))
