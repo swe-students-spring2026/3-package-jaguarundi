@@ -9,15 +9,15 @@
 - [**Steve Yoo**](https://github.com/seonghoyu11)
 
 ## Description
-dogcare is a Python package that helps dog owners understand and manage their pet's daily needs. 
+DogCare is a Python package that helps dog owners understand and manage their pet's daily needs. 
 
 Given a dog's species, weight, size, and age, the package calculates recommended daily water intake, food intake, and walks needed. It also generates personalized care tips, displays a full dog profile, and converts your dog's age into human years.
 
-Whether you have a tiny Chihuahua puppy or a senior Labrador, dogcare gives you practical, science-based guidance to keep your dog healthy and happy.
+Whether you have a tiny Chihuahua puppy or a senior Labrador, DogCare gives you practical, science-based guidance to keep your dog healthy and happy.
 ## About
 This Python package helps dog owners to estimate the amount of walks, water, and food needed for their dogs based on inputs such as species, weight, age, and size. It also includes dog care tips and dog-to-human age conversion. 
 
-Given Dog(species, weight, size, age):
+Given `Dog(species, weight, size, age)`:
 - `water_needed(dog)`
     - Returns a string estimating daily water intake (liters/day) based on weight.
 - `food_needed(dog, activity="normal")`
