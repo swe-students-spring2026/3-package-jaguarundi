@@ -52,20 +52,29 @@ my_dog = Dog(species="Golden Retriever", weight=30.0, size="large", age=5)
 ```python
 print(care.water_needed(my_dog))
 ```
-Output: `💧🐕 Estimated water consumption: 1.95L/day`
+Output: 
+```
+💧🐕 Estimated water consumption: 1.95L/day
+```
 
 ### Calculate daily food intake 
 - Activity can be "low", "normal", or "high"
 ```python
 print(care.food_needed(my_dog, activity="high"))
 ```
-Output: `🍽️ 🐕 Estimated food: 0.72 kg/day (activity: high)`
+Output: 
+```
+🍽️ 🐕 Estimated food: 0.72 kg/day (activity: high)
+```
 
 ### Get walk recommendations
 ```python
 print(care.walks_needed(my_dog))
 ```
-Output: `🚶🐕 Estimated walks: 3 walks/day, 30 mins each`
+Output:
+```
+🚶🐕 Estimated walks: 3 walks/day, 30 mins each
+```
 
 ### Get Dog's profile
 ```python
@@ -96,7 +105,10 @@ Your dog is in good condition!
 ```python
 print(care.human_years(my_dog))
 ```
-Output: `🎂🐕 42 human years old`
+Output: 
+```
+🎂🐕 42 human years old
+```
 
 ## For Developers
 If you want to contribute to the project, here is how you can set up your local development environment:
