@@ -18,6 +18,8 @@ Given `Dog(species, weight, size, age)`:
     - Returns a string estimating daily food amount (kg/day). activity can be "low", "normal", or "high".
 - `walks_needed(dog)`
     - Returns a string recommending number of walks per day and minutes per walk (adjusted for seniors).
+- `dog_profile(dog)`
+    - Returns a string displaying the dog's profile.
 - `dog_tip(dog)`
     - Returns a care tip string (puppy training reminders, senior care notes, under/overweight warnings).
 - `human_years(dog)`
@@ -31,45 +33,45 @@ You can install this package directly from PyPI using pip:
 pip install DogCare
 ```
 
-### Usage Example
+## Usage Example
 Here is a complete example of how to import and use all the features of the `DogCare` package:
 
-1. Import
+### Import
 ```python
 from dogcare.dog import Dog
 import dogcare.care as care
 ```
 
-2. Create a Dog object
+### Create a Dog object
 - Size must be "small", "medium", or "large", weight is in kg, age in years
 ```python
 my_dog = Dog(species="Golden Retriever", weight=30.0, size="large", age=5)
 ```
 
-3. Calculate daily water intake
+### Calculate daily water intake
 ```python
 print(care.water_needed(my_dog))
 ```
-- Output: `💧🐕 Estimated water consumption: 1.95L/day`
+`💧🐕 Estimated water consumption: 1.95L/day`
 
-4. Calculate daily food intake 
+### Calculate daily food intake 
 - Activity can be "low", "normal", or "high"
 ```python
 print(care.food_needed(my_dog, activity="high"))
 ```
-- Output: `🍽️ 🐕 Estimated food: 0.72 kg/day (activity: high)`
+`🍽️ 🐕 Estimated food: 0.72 kg/day (activity: high)`
 
-5. Get walk recommendations
+### Get walk recommendations
 ```python
 print(care.walks_needed(my_dog))
 ```
-- Output: `🚶🐕 Estimated walks: 3 walks/day, 30 mins each`
+`🚶🐕 Estimated walks: 3 walks/day, 30 mins each`
 
-6. Get Dog's profile
+### Get Dog's profile
 ```python
 print(care.dog_profile(my_dog))
 ```
-- Output:
+
 ```
 DOG PROFILE
 Species: Golden Retriever
@@ -80,23 +82,23 @@ Stage: Adult
 Note: Large dogs require more exercise.
 ```
 
-7. Get personalized care tips
+### Get personalized care tips
 ```python
 print(care.dog_tip(my_dog))
 ```
-- Output:
+
 ```
 Care Tips:
 Your dog is in good condition! 
 ```
 
-8. Convert age to human years
+### Convert age to human years
 ```python
 print(care.human_years(my_dog))
 ```
-- Output: `🎂🐕 42 human years old`
+`🎂🐕 42 human years old`
 
-### For Developers
+## For Developers
 If you want to contribute to the project, here is how you can set up your local development environment:
 
 1. Clone the repository:
