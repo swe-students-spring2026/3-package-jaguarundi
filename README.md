@@ -9,7 +9,19 @@
 - [**Steve Yoo**](https://github.com/seonghoyu11)
 
 ## About
+This Python package helps dog owners to estimate the amount of walks, water, and food needed for their dogs based on inputs such as species, weight, age, and size. It also includes dog care tips and dog-to-human age conversion. 
 
+Given Dog(species, weight, size, age):
+- water_needed(dog)
+    - Returns a string estimating daily water intake (liters/day) based on weight.
+- food_needed(dog, activity="normal")
+    - Returns a string estimating daily food amount (kg/day). activity can be "low", "normal", or "high".
+- walks_needed(dog)
+    - Returns a string recommending number of walks per day and minutes per walk (adjusted for seniors).
+- dog_tip(dog)
+    - Returns a care tip string (puppy training reminders, senior care notes, under/overweight warnings).
+- human_years(dog)
+    - Converts dog age to a playful “human years” estimate.
 
 ## How to use the package
 ### Download
