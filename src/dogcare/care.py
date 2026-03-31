@@ -40,7 +40,7 @@ def food_needed(dog, activity="normal"):
         food_kg *= 0.85
 
     food_kg = round(food_kg, 3)
-    return f"🍽️🐕 Estimated food: {food_kg} kg/day (activity: {activity})"
+    return f"🍽️ 🐕 Estimated food: {food_kg} kg/day (activity: {activity})"
 
 # function 3
 def walks_needed(dog):
@@ -62,7 +62,7 @@ def walks_needed(dog):
     if dog.age > 8:
         duration = max(10, duration - 10)
     
-    return f"🚶‍♂️🐕{walks} walks/day, {duration} mins each"
+    return f"🚶🐕 Estimated walks: {walks} walks/day, {duration} mins each"
 
 # function 4
 
